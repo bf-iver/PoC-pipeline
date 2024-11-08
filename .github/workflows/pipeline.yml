@@ -16,13 +16,13 @@ jobs:
         curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
 
     - name: Generate SBOM for Docker Hub Image with Syft
-      run: syft docker:bkimminich/juice-shop -o cyclonedx-json > juice-shop-sbom.json
+      run: syft docker:bkimminich/juice-shop -o spdx-json > juice-shop-sbom.json
 
     - name: Scan SBOM with Grype
       run: grype sbom:juice-shop-sbom.json -o json > grype-sbom-scan.json
 
     - name: Upload SBOM and Scan Results as Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Reports
         path: |
