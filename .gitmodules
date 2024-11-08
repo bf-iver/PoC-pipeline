@@ -1,0 +1,3 @@
+[submodule "stm32-dfu-bootloader"]
+	path = stm32-dfu-bootloader
+	url = git@poc-github:davidgfnet/stm32-dfu-bootloader.git
