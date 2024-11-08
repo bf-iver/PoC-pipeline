@@ -3,6 +3,8 @@ on:
   workflow_dispatch:  # Allows manual triggering of the workflow
 jobs:
   security-scan:
+    permissions:
+      actions: read
     runs-on: ubuntu-latest
     steps:
     
